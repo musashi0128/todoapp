@@ -1,6 +1,20 @@
-<div>
-  <%= label_tag :naem, "名前" %>
-  <%= text_field_tag :name, "", "ng-model" => "name" %>
-</div>
+<div class="container">
+  <h1>Templates#index</h1>
 
-<p>こんにちは、「{{name}}」さん。</p>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <%= label_tag :text, "テキスト", class: "col-md-3 control-label" %>
+      <div class="col-md-5">
+        <%= text_field_tag :text, "", "ng-model" => "text", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :tooltipText, "ツールチップのテキスト", class: "col-md-3 control-label" %>
+      <div class="col-md-5">
+        <%= text_field_tag :tooltipText, "", "ng-model" => "tooltipText", class: "form-control" %>
+      </div>
+    </div>
+  </form>
+
+  <a href="#" tooltip="{{tooltipText}}" class="control-label">{{text}}</a>
+</div>
